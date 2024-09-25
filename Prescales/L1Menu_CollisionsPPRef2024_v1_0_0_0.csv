@@ -1,6 +1,6 @@
 Index,Name,Emergency,HighZeroBias,HighZeroBias_NoMuShowers,HalfZeroBias,OnlyPhysics,HighRandom,HighRandom_NoMuShowers
 0,L1_AlwaysTrue,0,0,0,0,0,0,0
-1,L1_ZeroBias,17881,1,1,1,1,1,1
+1,L1_ZeroBias,17881,56401,56401,56401,56401,56401,56401
 2,L1_ZeroBias_copy,0,0,0,0,0,0,0
 3,L1_BPTX_AND_Ref1_VME,0,0,0,0,0,0,0
 4,L1_BPTX_AND_Ref3_VME,0,0,0,0,0,0,0
