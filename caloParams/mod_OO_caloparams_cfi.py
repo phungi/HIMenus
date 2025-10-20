@@ -60,11 +60,13 @@ caloStage2Params = L1Trigger.L1TCalorimeter.caloParams_cfi.caloParams.clone(
 
     etSumMetPUSLUTFile               = "L1Trigger/L1TCalorimeter/data/metPumLUT_2023v0_puppiMet_fit.txt",
 
-    etSumCentralityUpper = [1000.0, 1000.0, 1000.0, 938.0, 1700.0, 7000.0, 7000.0, 65535.0],
-    etSumCentralityLower = [5.0,  6.0,  7.0, 295.0, 703.0, 5373.0, 5648.0, 65535.0],
+
+    # OO centrality below
+    # etSumCentralityUpper = [1000.0, 1000.0, 1000.0, 938.0, 1700.0, 7000.0, 7000.0, 65535.0],
+    # etSumCentralityLower = [5.0,  6.0,  7.0, 295.0, 703.0, 5373.0, 5648.0, 65535.0],
     # PbPb centrality below
-    # etSumCentralityUpper = [13.0, 72.0, 429.0, 938.0, 1700.0, 7000.0, 7000.0, 65535.0],
-    # etSumCentralityLower = [6.0,  13.0,  58.0, 295.0, 703.0, 5373.0, 5648.0, 65535.0],
+    etSumCentralityUpper = [13.0, 72.0, 429.0, 938.0, 1700.0, 7000.0, 7000.0, 65535.0],
+    etSumCentralityLower = [6.0,  13.0,  58.0, 295.0, 703.0, 5373.0, 5648.0, 65535.0],
     
     # Layer 1 SF
     layer1ECalScaleETBins = cms.vint32([3, 6, 9, 12, 15, 20, 25, 30, 35, 40, 45, 55, 70, 256]),
