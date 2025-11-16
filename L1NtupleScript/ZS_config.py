@@ -44,9 +44,22 @@ process.source = cms.Source("NewEventStreamFileReader",
         # '/store/hidata/OORun2025/IonPhysics0/RAW/v1/000/394/175/00000/a3ae4f1d-9c53-482c-ab2c-df24a82f1bc1.root'
         # '/store/hidata/OORun2025/IonPhysics0/RAW/v1/000/394/175/00000/93400011-286f-48db-b79d-a06d241f30c3.root'
         #pp below
-        'file:/eos/cms/store/t0streamer/Data/PhysicsHIPhysicsRawPrime0/000/399/323/run399323_ls0004_streamPhysicsHIPhysicsRawPrime0_StorageManager.dat'
+        'file:/eos/cms/store/t0streamer/Data/PhysicsHIPhysicsRawPrime0/000/399/499/run399499_ls0089_streamPhysicsHIPhysicsRawPrime0_StorageManager.dat'
     )
 )
+
+# process.source = cms.Source("PoolSource",
+#     fileNames = cms.untracked.vstring(
+#         #below 2024 special run
+#         # '/store/hidata/HIRun2024B/HIZeroBias0/RAW/v1/000/388/702/00000/b1aa4bcf-753b-40ab-a896-b30781b28d0f.root'
+#         # '/store/hidata/HIRun2024A/HIZeroBias0/RAW/v1/000/387/892/00000/e690293d-75ab-4db2-8650-6ba318af0512.root'
+#         '/store/hidata/OORun2025/IonPhysics0/RAW/v1/000/394/175/00000/a3ae4f1d-9c53-482c-ab2c-df24a82f1bc1.root'
+#         # '/store/hidata/OORun2025/IonPhysics0/RAW/v1/000/394/175/00000/93400011-286f-48db-b79d-a06d241f30c3.root'
+#         #pp below
+#         # '/store/data/Run2025F/ZeroBias/RAW/v1/000/397/527/00000/024142b8-3c1f-43a9-9cad-0eb1f7f5bfdf.root'
+#     )
+# )
+
 
 # Output definition
 from Configuration.Applications.ConfigBuilder import MassReplaceInputTag
@@ -151,4 +164,7 @@ process.schedule.append(process.etSumZdc) #
 
 
 #UNCOMMENT HERE TO WORK WITH THE LATEST GREATEST
-MassReplaceInputTag(process, new="rawDataRepacker", old="rawDataCollector")
+# MassReplaceInputTag(process, new="rawDataRepacker", old="rawDataCollector")
+MassReplaceInputTag(process, new="rawDataMapperByLabel", old="rawDataCollector")
+
+
