@@ -6,8 +6,9 @@ import os
 import sys
 
 #from Configuration.Eras.Era_Run3_pp_on_PbPb_cff import Run3_pp_on_PbPb
-from Configuration.Eras.Era_Run3_pp_on_PbPb_2025_cff import Run3_pp_on_PbPb_2025
-process = cms.Process('RAW2DIGI', Run3_pp_on_PbPb_2025)
+# from Configuration.Eras.Era_Run3_pp_on_PbPb_2025_cff import Run3_pp_on_PbPb_2025
+from Configuration.Eras.Era_Run3_pp_on_PbPb_2026_cff import Run3_pp_on_PbPb_2026
+process = cms.Process('RAW2DIGI', Run3_pp_on_PbPb_2026)
 
 # import of standard configurations
 process.load('Configuration.StandardSequences.Services_cff')  #
@@ -23,8 +24,11 @@ process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 from Configuration.AlCa.GlobalTag import GlobalTag
 # use the prompt queue for now, will need to update when the full GT becomes available
-process.GlobalTag = GlobalTag(process.GlobalTag, '150X_dataRun3_Prompt_Queue', '')
 # process.GlobalTag = GlobalTag(process.GlobalTag, '141X_dataRun3_Prompt_v4', '')
+# process.GlobalTag = GlobalTag(process.GlobalTag, '150X_dataRun3_Prompt_Queue', '')
+process.GlobalTag = GlobalTag(process.GlobalTag, '161X_dataRun3_Prompt_v1', '')
+
+
 
 # needed to supress error from cmssw 14
 # process.add_(cms.Service("AdaptorConfig", native=cms.untracked.vstring("root")))
@@ -93,12 +97,12 @@ process = L1NtupleRAWEMU(process) #
 # process = L1TSettingsToCaloParams_2025_ZS_tests(process)
 
 # Automatic addition of the customisation function from L1Trigger.Configuration.customiseSettings
-# from L1Trigger.Configuration.customiseSettings import Tight_ZS_iEta_26_27_28_masked #
-# process = Tight_ZS_iEta_26_27_28_masked(process) #
+from L1Trigger.Configuration.customiseSettings import Tight_ZS_iEta_26_27_28_masked #
+process = Tight_ZS_iEta_26_27_28_masked(process) #
 
 
-from L1Trigger.Configuration.customiseSettings import Nominal_ZS #
-process = Nominal_ZS(process) #
+# from L1Trigger.Configuration.customiseSettings import Nominal_ZS #
+# process = Nominal_ZS(process) #
 
 
 # Automatic addition of the customisation function from L1Trigger.Configuration.customiseUtils
